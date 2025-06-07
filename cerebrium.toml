@@ -3,7 +3,7 @@ name = "mtailor-mlops"
 python_version = "3.10"
 docker_base_image_url = "debian:bookworm-slim"
 disable_auth = false
-include = ["./*", "Dockerfile", "model.onnx", "app.py", "model.py", 'cerebrium.toml']
+include = ["./*",'cerebrium.toml', 'main.py', "model.py", "model.onnx"]
 exclude = ['.*']
 
 [cerebrium.hardware]
@@ -22,3 +22,9 @@ scaling_target = 100
 scaling_buffer = 0
 roll_out_duration_seconds = 0
 
+[cerebrium.dependencies.pip]
+numpy = "latest"
+pillow = "latest"
+onnxruntime = "latest"
+torch= "latest"
+torchvision="latest"
