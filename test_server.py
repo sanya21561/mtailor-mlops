@@ -52,17 +52,23 @@ def run_cerebrium_tests(api_url, api_key):
 
 
 if __name__ == "__main__":
+    print(0)
     parser = argparse.ArgumentParser()
     parser.add_argument("--image", type=str, help="Path to test image")
     parser.add_argument("--url", type=str, required=True, help="Cerebrium POST endpoint URL")
     parser.add_argument("--api_key", type=str, required=True, help="Your Cerebrium API Key")
     parser.add_argument("--test", action="store_true", help="Run all preset test cases")
-
+    print(1)
     args = parser.parse_args()
-
+    print(2)
     if args.test:
+        print(3)
         run_cerebrium_tests(args.url, args.api_key)
+        print(3.1)
     elif args.image:
+        print(4)
         call_cerebrium_api(args.url, args.api_key, args.image)
+        print(4.1)
     else:
+        print(5)
         print("Please provide either --image or --test")

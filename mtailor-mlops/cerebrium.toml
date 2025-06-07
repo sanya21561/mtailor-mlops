@@ -3,7 +3,7 @@ name = "mtailor-mlops"
 python_version = "3.10"
 docker_base_image_url = "debian:bookworm-slim"
 disable_auth = false
-include = ['./*', 'main.py', 'cerebrium.toml']
+include = ["./*", "Dockerfile", "model.onnx", "app.py", "model.py", 'cerebrium.toml']
 exclude = ['.*']
 
 [cerebrium.hardware]
