@@ -1,9 +1,9 @@
 import torch
 from PIL import Image
-from pytorch_model import BasicBlock
+from pytorch_model import ModelWrapper
 
 def convert_model_to_onnx(weights_path: str, image_path: str, output_path: str = "model.onnx"):
-    model = BasicBlock()
+    model = ModelWrapper()
     model.load_weights(weights_path)
     model.eval()
 
@@ -29,5 +29,5 @@ def convert_model_to_onnx(weights_path: str, image_path: str, output_path: str =
 
 if __name__ == "__main__":
     weights_file = "weights/pytorch_model_weights.pth"
-    sample_image_path = "images/n01440764_tench.jpeg" 
+    sample_image_path = "images/n01440764_tench.jpeg"  # Make sure this exists
     convert_model_to_onnx(weights_file, sample_image_path)
