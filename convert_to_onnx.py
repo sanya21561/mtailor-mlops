@@ -1,9 +1,9 @@
 import torch
 from PIL import Image
-from pytorch_model import ClassificationModel
+from pytorch_model import BasicBlock
 
 def convert_model_to_onnx(weights_path: str, image_path: str, output_path: str = "model.onnx"):
-    model = ClassificationModel()
+    model = BasicBlock()
     model.load_weights(weights_path)
     model.eval()
 
